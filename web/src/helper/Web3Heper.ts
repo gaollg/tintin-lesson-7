@@ -3,7 +3,7 @@ import { TransactionConfig } from 'web3-core';
 import { Contract, ContractOptions } from 'web3-eth-contract';
 import Lesson7ERC20V3FactoryAbiData from './Lesson7ERC20V3Factory.json';
 
-let contractAddress = '0x86Dd4C46766228BA10c6d98AB3649E9772e07D35';
+let contractAddress = '0xa7c7c2886171160145810436481c62bdd8d6beec';
 let instanceWeb3: Web3;
 
 let commUseGas = (fromAddress: string, method: string, paramArray: any[]): Promise<string> => {
@@ -13,6 +13,7 @@ let commUseGas = (fromAddress: string, method: string, paramArray: any[]): Promi
 
     console.log(paramArray);
     let transferData = fn.apply({}, paramArray).encodeABI();
+    // let transferData = fn(paramArray[0], paramArray[1], paramArray[2], paramArray[3], paramArray[4]).encodeABI();
 
     let estimateGasRes = await instanceWeb3.eth.estimateGas({
       to: contractAddress,
