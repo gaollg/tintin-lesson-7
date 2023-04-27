@@ -27,8 +27,7 @@ export default function HomePage() {
         return (
           <div>
             <HomeWork1 />
-            {/* <HomeWork2 />
-            <HomeWork3 /> */}
+            <HomeWork2 />
           </div>
         );
       })()}

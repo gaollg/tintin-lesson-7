@@ -5,7 +5,7 @@ let web3 = Web3Helper.instance();
 
 export default function HomeWork1(props: {}) {
   return (
-    <Card title="得分点">
+    <Card title="得分点" className="mt-3">
       <div className="">
         CloneFactory:{' '}
         <a
