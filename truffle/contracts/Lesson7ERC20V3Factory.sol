@@ -142,7 +142,7 @@ contract ERC20V3Factory is InitializableOwnable {
     address customErc20Template,
     address customMintableErc20Template,
     uint256 createFee
-  ) public {
+  ) {
     _CLONE_FACTORY_ = cloneFactory;
     _ERC20_TEMPLATE_ = erc20Template;
     _CUSTOM_ERC20_TEMPLATE_ = customErc20Template;
@@ -234,7 +234,7 @@ contract ERC20V3Factory is InitializableOwnable {
 
   function withdraw() external onlyOwner {
     uint256 amount = address(this).balance;
-    msg.sender.transfer(amount);
+    payable(msg.sender).transfer(amount);
     emit Withdraw(msg.sender, amount);
   }
 
