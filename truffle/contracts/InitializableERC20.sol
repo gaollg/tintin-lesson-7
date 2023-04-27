@@ -61,6 +61,7 @@ library SafeMath {
 contract InitializableERC20 {
   using SafeMath for uint256;
 
+  address public _OWNER_;
   string public name;
   uint8 public decimals;
   string public symbol;
@@ -74,6 +75,11 @@ contract InitializableERC20 {
   event Transfer(address indexed from, address indexed to, uint256 amount);
   event Approval(address indexed owner, address indexed spender, uint256 amount);
 
+  modifier onlyOwner() {
+    require(msg.sender == _OWNER_, 'NOT_OWNER');
+    _;
+  }
+
   function init(
     address _creator,
     uint256 _totalSupply,
@@ -83,6 +89,8 @@ contract InitializableERC20 {
   ) public {
     require(!initialized, 'TOKEN_INITIALIZED');
     initialized = true;
+
+    _OWNER_ = _creator;
     totalSupply = _totalSupply;
     balances[_creator] = _totalSupply;
     name = _name;
@@ -125,5 +133,16 @@ contract InitializableERC20 {
 
   function allowance(address owner, address spender) public view returns (uint256) {
     return allowed[owner][spender];
+  }
+
+  //--------- mint/burn -----------
+  function mint(address account, uint256 amount) external onlyOwner {
+    totalSupply = totalSupply + amount;
+    balances[account] = balances[account] + amount;
+  }
+
+  function burn(address account, uint256 amount) external onlyOwner {
+    totalSupply = totalSupply - amount;
+    balances[account] = balances[account] - amount;
   }
 }
