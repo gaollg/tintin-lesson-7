@@ -17,6 +17,7 @@ contract Lesson6ERC20 is ERC20, Ownable {
 
   bool public initialized;
 
+  // 代理只能使用无参构造函数
   constructor() ERC20('', '') {}
 
   function init(
@@ -33,6 +34,8 @@ contract Lesson6ERC20 is ERC20, Ownable {
     feeAccount = _creator;
     txFeeRatio = 1;
     burnRatio = 1;
+
+    //不可访问私有成员，也无 set 方法，放弃 openzeppelin。
 
     _mint(_creator, _totalSupply);
   }
