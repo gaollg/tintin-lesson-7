@@ -1,7 +1,8 @@
+// SPDX-License-Identifier: MIT
+
 /*
 Copy from: https://etherscan.io/address/0x8443a5bd91c8f68582f90dd3354f750900c5e8cc#code
 */
-
 pragma solidity 0.8.19;
 
 /**
