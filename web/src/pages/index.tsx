@@ -28,6 +28,7 @@ export default function HomePage() {
           <div>
             <HomeWork1 />
             <HomeWork2 />
+            <HomeWork3 />
           </div>
         );
       })()}
