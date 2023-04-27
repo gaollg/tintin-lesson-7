@@ -3,34 +3,47 @@ import { Button, Divider, Card } from 'antd';
 import { useEffect, useState } from 'react';
 let web3 = Web3Helper.instance();
 
-type TLoginInfo = {
-  chainId: number;
-  blockNumber: number;
-  blockTimestamp: string | number;
-  balance: string;
-};
-
-let contractLesson6ERC20 = Web3Helper.getContractLesson6ERC20();
-
 export default function HomeWork1(props: {}) {
   return (
-    <Card title="作业1: 提交js交互的代码。部署带有增发与销毁功能的erc20合约至测试网" className="mt-3">
+    <Card title="得分点">
       <div className="">
-        <div>
-          合约：
-          <a
-            href="https://mumbai.polygonscan.com/address/0x86dd4c46766228ba10c6d98ab3649e9772e07d35#code"
-            target="_blank"
-          >
-            0x86dd4c46766228ba10c6d98ab3649e9772e07d35
-          </a>
-        </div>
-        <div>
-          代码：
-          <a href="https://github.com/gaollg/tintin-lesson-6/blob/main/src/helper/Web3Heper.ts#L10" target="_blank">
-            https://github.com/gaollg/tintin-lesson-6/blob/main/src/helper/Web3Heper.ts#L10
-          </a>
-        </div>
+        CloneFactory:{' '}
+        <a
+          href="https://mumbai.polygonscan.com/address/0x7522C532B511446a2387748b81eB5E73E2231c80#code"
+          target="_blank"
+        >
+          0x7522C532B511446a2387748b81eB5E73E2231c80
+        </a>
+        <br />
+        ERC20 模板合约：
+        <a
+          href="https://mumbai.polygonscan.com/address/0x159288596C68dDc8a97E18ECdd3d2eB0d6b21616#code"
+          target="_blank"
+        >
+          0x159288596C68dDc8a97E18ECdd3d2eB0d6b21616
+        </a>
+        <br />
+        创建代币工厂合约：
+        <a
+          href="https://mumbai.polygonscan.com/address/0xa7c7c2886171160145810436481c62bdd8d6beec#code"
+          target="_blank"
+        >
+          0xa7c7c2886171160145810436481c62bdd8d6beec
+        </a>
+        <br />
+        工厂合约的初始化设置：
+        <a
+          href="https://github.com/gaollg/tintin-lesson-7/blob/main/truffle/migrations/4_deploy_Lesson7ERC20V3Factory.js"
+          target="_blank"
+        >
+          github.com/gaollg/.../4_deploy_Lesson7ERC20V3Factory.js
+        </a>
+      </div>
+      <div className="mt-4">
+        合约发布记录：
+        <a href="https://mumbai.polygonscan.com/address/0x1c4f4a2055a7a2138cb063617fed8955da4b0d45" target="_blank">
+          0x1c4f4a2055a7a2138cb063617fed8955da4b0d45
+        </a>
       </div>
     </Card>
   );
