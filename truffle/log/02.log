@@ -1,0 +1,65 @@
+truffle micrate --network mumbai
+
+Compiling your contracts...
+===========================
+> Compiling .\contracts\InitializableERC20.sol
+> Compiling .\contracts\Lesson7ERC20V3Factory.sol
+> Compiling .\contracts\Lesson7ERC20V3Factory.sol
+> Compiling .\contracts\Migrations.sol
+> Artifacts written to E:\git_2023\tintin-lesson-7\truffle\build\contracts
+> Compiled successfully using:
+   - solc: 0.8.19+commit.7dd6d404.Emscripten.clang
+
+
+Starting migrations...     
+======================     
+> Network name:    'mumbai'
+> Network id:      80001   
+> Block gas limit: 20000000 (0x1312d00)
+
+
+3_deploy_CloneFactory.js
+========================
+
+   Deploying 'CloneFactory'
+   Deploying 'CloneFactory'
+   ------------------------
+   > transaction hash:    0x3e08ce1c0172b0dc4fdfa6da448ef7ace011946934f1969a30ac5eb39ad1ac46
+   > Blocks: 6            Seconds: 14
+   > contract address:    0x7522C532B511446a2387748b81eB5E73E2231c80
+   > block number:        34877199
+   > block timestamp:     1682568873
+   > account:             0x5Ee9F4Fe59aDd6b33bbe41fDaa26BC43af51681c
+   > balance:             7.488057602935071568
+   > gas used:            111757 (0x1b48d)
+   > gas price:           1.5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0001676355 ETH
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:        0.0001676355 ETH
+
+
+4_deploy_Lesson7ERC20V3Factory.js
+=================================
+
+   Deploying 'Lesson7ERC20V3Factory'
+   ---------------------------------
+ *** Deployment Failed ***
+
+"Lesson7ERC20V3Factory" -- Invalid number of parameters for "undefined". Got 0 expected 2!.
+
+
+Exiting: Review successful transactions manually by checking the transaction hashes above on Etherscan.
+
+
+Error:  *** Deployment Failed ***
+
+"Lesson7ERC20V3Factory" -- Invalid number of parameters for "undefined". Got 0 expected 2!.
+
+    at C:\Users\gaoll\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\deployer\src\deployment.js:330:1
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+Truffle v5.8.1 (core: 5.8.1)
+Node v18.13.0

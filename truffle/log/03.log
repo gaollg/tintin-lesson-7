@@ -1,0 +1,45 @@
+truffle micrate --network mumbai
+
+Compiling your contracts...
+===========================
+> Compiling .\contracts\InitializableERC20.sol
+> Compiling .\contracts\Lesson7ERC20V3Factory.sol
+> Compiling .\contracts\Migrations.sol
+> Artifacts written to E:\git_2023\tintin-lesson-7\truffle\build\contracts
+> Compiled successfully using:
+   - solc: 0.8.19+commit.7dd6d404.Emscripten.clang
+
+
+Starting migrations...
+======================
+> Network name:    'mumbai'
+> Network id:      80001
+> Block gas limit: 20097840 (0x132ab30)
+
+
+4_deploy_Lesson7ERC20V3Factory.js
+=================================
+
+   Deploying 'Lesson7ERC20V3Factory'
+   ---------------------------------
+   > transaction hash:    0x01baa7313a736ca09e25cf08c2f447f617da0ea1e388b51f8a77068d48a3a483
+   > Blocks: 6            Seconds: 14
+   > contract address:    0xa7C7C2886171160145810436481C62BdD8D6bEec
+   > block number:        34877408
+   > block timestamp:     1682569319
+   > account:             0x5Ee9F4Fe59aDd6b33bbe41fDaa26BC43af51681c
+   > balance:             7.486520138935071568
+   > gas used:            996365 (0xf340d)
+   > gas price:           1.5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0014945475 ETH
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:        0.0014945475 ETH
+
+Summary
+=======
+> Total deployments:   1
+> Final cost:          0.0014945475 ETH

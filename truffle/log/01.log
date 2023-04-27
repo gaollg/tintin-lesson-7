@@ -1,0 +1,86 @@
+truffle micrate --network mumbai
+
+Compiling your contracts...
+===========================
+> Compiling .\contracts\InitializableERC20.sol
+> Compiling .\contracts\Lesson7ERC20V3Factory.sol
+> Compiling .\contracts\Migrations.sol
+> Artifacts written to E:\git_2023\tintin-lesson-7\truffle\build\contracts
+> Compiled successfully using:
+   - solc: 0.8.19+commit.7dd6d404.Emscripten.clang
+
+
+Starting migrations...
+======================
+> Network name:    'mumbai'
+> Network id:      80001
+> Block gas limit: 20000000 (0x1312d00)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0xab18b58c65655917a670aedd9e1f475ee652e9100f24a6896eb126e94576fa73
+   > Blocks: 7            Seconds: 18
+   > contract address:    0x1C4f4A2055A7A2138cb063617Fed8955dA4B0d45
+   > block number:        34876848
+   > block timestamp:     1682568129
+   > account:             0x5Ee9F4Fe59aDd6b33bbe41fDaa26BC43af51681c
+   > balance:             7.489533692935071568
+   > gas used:            176252 (0x2b07c)
+   > gas price:           1.5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000264378 ETH
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:         0.000264378 ETH
+
+
+2_deploy_InitializableERC20 copy.js
+===================================
+
+   Deploying 'InitializableERC20'
+   ------------------------------
+   > transaction hash:    0x28c671f63259c6b324b3a96dab32ee2c607a4923de3c7f2892636b35f0589a4f
+   > Blocks: 5            Seconds: 10
+   > contract address:    0x159288596C68dDc8a97E18ECdd3d2eB0d6b21616
+   > block number:        34876867
+   > block timestamp:     1682568169
+   > account:             0x5Ee9F4Fe59aDd6b33bbe41fDaa26BC43af51681c
+   > balance:             7.488268154935071568
+   > gas used:            797981 (0xc2d1d)
+   > gas price:           1.5 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0011969715 ETH
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:        0.0011969715 ETH
+
+
+3_deploy_Lesson7ERC20V3Factory.js
+=================================
+
+   Deploying 'Lesson7ERC20V3Factory'
+   ---------------------------------
+ *** Deployment Failed ***
+
+"Lesson7ERC20V3Factory" -- Invalid number of parameters for "undefined". Got 0 expected 5!.
+
+
+Exiting: Review successful transactions manually by checking the transaction hashes above on Etherscan.
+
+
+Error:  *** Deployment Failed ***
+
+"Lesson7ERC20V3Factory" -- Invalid number of parameters for "undefined". Got 0 expected 5!.
+
+    at C:\Users\gaoll\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\deployer\src\deployment.js:330:1
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+Truffle v5.8.1 (core: 5.8.1)
+Node v18.13.0
