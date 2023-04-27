@@ -11,6 +11,7 @@ export default function HomeWork2(props: {}) {
 
   const onFinish = (values: any) => {
     console.log('Success:', values);
+    Web3Helper.createStdERC20(values);
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -26,6 +27,7 @@ export default function HomeWork2(props: {}) {
         style={{ maxWidth: 600 }}
         initialValues={{
           _erc20_template_: '0x159288596c68ddc8a97e18ecdd3d2eb0d6b21616',
+          totalSupply: 10086,
           name: 'TinTin Lesson7 NFT',
           symbol: '7NFT',
         }}
@@ -41,6 +43,9 @@ export default function HomeWork2(props: {}) {
           <Input />
         </Form.Item>
 
+        <Form.Item label="总数量" name="totalSupply" rules={[{ required: true, message: '认真混圈，仔细填写' }]}>
+          <InputNumber />
+        </Form.Item>
         <Form.Item label="货币名称" name="name" rules={[{ required: true, message: '认真混圈，仔细填写' }]}>
           <Input />
         </Form.Item>
