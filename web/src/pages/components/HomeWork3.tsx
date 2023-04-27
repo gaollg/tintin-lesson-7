@@ -35,7 +35,7 @@ export default function HomeWork3(props: {}) {
             {historyList.map((item, index) => {
               return (
                 <div key={index}>
-                  <a href={item} target="_blank">
+                  <a href={'https://mumbai.polygonscan.com/address/' + item + '#code'} target="_blank">
                     {item}
                   </a>
                 </div>
