@@ -106,7 +106,7 @@ interface ICustomERC20 {
  *
  * @notice Help user to create erc20 token
  */
-contract ERC20V3Factory is InitializableOwnable {
+contract Lesson7ERC20V3Factory is InitializableOwnable {
   // ============ Templates ============
 
   address public immutable _CLONE_FACTORY_;
