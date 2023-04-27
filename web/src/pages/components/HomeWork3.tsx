@@ -25,7 +25,7 @@ export default function HomeWork3(props: {}) {
   }, []);
 
   return (
-    <Card title="发布记录" className="mt-3">
+    <Card title="发币记录" className="mt-3">
       {(() => {
         if (historyList.length == 0) {
           return <div>暂示发币</div>;

@@ -9,7 +9,7 @@ export default function Layout() {
           <Link to="/">作业</Link>
         </li>
         <li>
-          <a href="https://github.com/gaollg/tintin-lesson-6">Github</a>
+          <a href="https://github.com/gaollg/tintin-lesson-7">Github</a>
         </li>
       </ul>
       <Outlet />
