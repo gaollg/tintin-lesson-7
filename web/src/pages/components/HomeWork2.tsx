@@ -9,9 +9,11 @@ export default function HomeWork2(props: {}) {
   let [mintValue, setMintValue] = useState<number>(200);
   let [burnValue, setBurnValue] = useState<number>(100);
 
-  const onFinish = (values: any) => {
-    console.log('Success:', values);
-    Web3Helper.createStdERC20(values);
+  const onFinish = async (values: any) => {
+    console.log('表单值:', values);
+    Web3Helper.createStdERC20(values).then((res) => {
+      alert('发币成功' + JSON.stringify(res));
+    });
   };
 
   const onFinishFailed = (errorInfo: any) => {
