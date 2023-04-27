@@ -1,7 +1,7 @@
 # tintin-lesson-7
 
 
-# 合约地址：
+### 合约地址：
 
 CloneFactory: <a href="https://mumbai.polygonscan.com/address/0x7522C532B511446a2387748b81eB5E73E2231c80#code"  target="_blank">0x7522C532B511446a2387748b81eB5E73E2231c80</a>
 
@@ -11,4 +11,6 @@ ERC20 模板合约: <a href="https://mumbai.polygonscan.com/address/0x159288596C
 
 工厂合约的初始化设置：<a href="https://github.com/gaollg/tintin-lesson-7/blob/main/truffle/migrations/4_deploy_Lesson7ERC20V3Factory.js" target="_blank">4_deploy_Lesson7ERC20V3Factory.js</a>
 
-合约发布记录：<a href="https://mumbai.polygonscan.com/address/0x1c4f4a2055a7a2138cb063617fed8955da4b0d45" target="_blank">0x1c4f4a2055a7a2138cb063617fed8955da4b0d45</a>
+### 合约发布记录
+
+<a href="https://mumbai.polygonscan.com/address/0x1c4f4a2055a7a2138cb063617fed8955da4b0d45" target="_blank">0x1c4f4a2055a7a2138cb063617fed8955da4b0d45</a>
