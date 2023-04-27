@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.bd1 {
+  border: 1px solid deeppink;
+}
+.bd2 {
+  border: 1px solid rgb(8, 167, 252);
+}
+.bd3 {
+  border: 1px solid rgb(255, 204, 0);
+}
