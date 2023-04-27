@@ -5,7 +5,7 @@ let web3 = Web3Helper.instance();
 
 let contractLesson6ERC20 = Web3Helper.getContractLesson7ERC20V3Factory();
 
-export default function HomeWork3(props: {}) {
+export default function MintHistory(props: {}) {
   let [historyList, setHistoryList] = useState<string[]>([]);
   let fresh = async () => {
     let accounts = await Web3Helper.instance().eth.getAccounts();

@@ -1,14 +1,8 @@
 import Web3Helper from '@/helper/Web3Heper';
 import { Button, Divider, Card, Input, Space, InputNumber, Form } from 'antd';
-import { useEffect, useState } from 'react';
 let web3 = Web3Helper.instance();
 
-let contractLesson7ERC20V3Factory = Web3Helper.getContractLesson7ERC20V3Factory();
-
-export default function HomeWork2(props: {}) {
-  let [mintValue, setMintValue] = useState<number>(200);
-  let [burnValue, setBurnValue] = useState<number>(100);
-
+export default function MintPanel(props: {}) {
   const onFinish = async (values: any) => {
     console.log('表单值:', values);
     Web3Helper.createStdERC20(values).then((res) => {
