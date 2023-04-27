@@ -110,9 +110,6 @@ contract Lesson7ERC20V3Factory is InitializableOwnable {
   // ============ Templates ============
 
   address public immutable _CLONE_FACTORY_;
-  address public _ERC20_TEMPLATE_;
-  address public _CUSTOM_ERC20_TEMPLATE_;
-  address public _CUSTOM_MINTABLE_ERC20_TEMPLATE_;
   uint256 public _CREATE_FEE_;
 
   // ============ Events ============
@@ -120,9 +117,6 @@ contract Lesson7ERC20V3Factory is InitializableOwnable {
   event NewERC20(address erc20, address creator, uint256 erc20Type);
   event ChangeCreateFee(uint256 newFee);
   event Withdraw(address account, uint256 amount);
-  event ChangeStdTemplate(address newStdTemplate);
-  event ChangeCustomTemplate(address newCustomTemplate);
-  event ChangeCustomMintableTemplate(address newCustomMintableTemplate);
 
   // ============ Registry ============
   // creator -> token address list
@@ -136,34 +130,27 @@ contract Lesson7ERC20V3Factory is InitializableOwnable {
 
   receive() external payable {}
 
-  constructor(
-    address cloneFactory,
-    address erc20Template,
-    address customErc20Template,
-    address customMintableErc20Template,
-    uint256 createFee
-  ) {
+  constructor(address cloneFactory, uint256 createFee) {
     _CLONE_FACTORY_ = cloneFactory;
-    _ERC20_TEMPLATE_ = erc20Template;
-    _CUSTOM_ERC20_TEMPLATE_ = customErc20Template;
-    _CUSTOM_MINTABLE_ERC20_TEMPLATE_ = customMintableErc20Template;
     _CREATE_FEE_ = createFee;
   }
 
   function createStdERC20(
+    address _erc20_template_,
     uint256 totalSupply,
     string memory name,
     string memory symbol,
     uint8 decimals
   ) external payable returns (address newERC20) {
     require(msg.value >= _CREATE_FEE_, 'CREATE_FEE_NOT_ENOUGH');
-    newERC20 = ICloneFactory(_CLONE_FACTORY_).clone(_ERC20_TEMPLATE_);
+    newERC20 = ICloneFactory(_CLONE_FACTORY_).clone(_erc20_template_);
     IStdERC20(newERC20).init(msg.sender, totalSupply, name, symbol, decimals);
     _USER_STD_REGISTRY_[msg.sender].push(newERC20);
     emit NewERC20(newERC20, msg.sender, 0);
   }
 
   function createCustomERC20(
+    address _custom_erc20_template_,
     uint256 totalSupply,
     string memory name,
     string memory symbol,
@@ -173,7 +160,7 @@ contract Lesson7ERC20V3Factory is InitializableOwnable {
     address teamAccount
   ) external payable returns (address newCustomERC20) {
     require(msg.value >= _CREATE_FEE_, 'CREATE_FEE_NOT_ENOUGH');
-    newCustomERC20 = ICloneFactory(_CLONE_FACTORY_).clone(_CUSTOM_ERC20_TEMPLATE_);
+    newCustomERC20 = ICloneFactory(_CLONE_FACTORY_).clone(_custom_erc20_template_);
 
     ICustomERC20(newCustomERC20).init(
       msg.sender,
@@ -192,6 +179,7 @@ contract Lesson7ERC20V3Factory is InitializableOwnable {
   }
 
   function createCustomMintableERC20(
+    address _custom_mintable_erc20_template_,
     uint256 initSupply,
     string memory name,
     string memory symbol,
@@ -201,7 +189,7 @@ contract Lesson7ERC20V3Factory is InitializableOwnable {
     address teamAccount
   ) external payable returns (address newCustomMintableERC20) {
     require(msg.value >= _CREATE_FEE_, 'CREATE_FEE_NOT_ENOUGH');
-    newCustomMintableERC20 = ICloneFactory(_CLONE_FACTORY_).clone(_CUSTOM_MINTABLE_ERC20_TEMPLATE_);
+    newCustomMintableERC20 = ICloneFactory(_CLONE_FACTORY_).clone(_custom_mintable_erc20_template_);
 
     ICustomERC20(newCustomMintableERC20).init(
       msg.sender,
@@ -236,20 +224,5 @@ contract Lesson7ERC20V3Factory is InitializableOwnable {
     uint256 amount = address(this).balance;
     payable(msg.sender).transfer(amount);
     emit Withdraw(msg.sender, amount);
-  }
-
-  function updateStdTemplate(address newStdTemplate) external onlyOwner {
-    _ERC20_TEMPLATE_ = newStdTemplate;
-    emit ChangeStdTemplate(newStdTemplate);
-  }
-
-  function updateCustomTemplate(address newCustomTemplate) external onlyOwner {
-    _CUSTOM_ERC20_TEMPLATE_ = newCustomTemplate;
-    emit ChangeCustomTemplate(newCustomTemplate);
-  }
-
-  function updateCustomMintableTemplate(address newCustomMintableTemplate) external onlyOwner {
-    _CUSTOM_MINTABLE_ERC20_TEMPLATE_ = newCustomMintableTemplate;
-    emit ChangeCustomMintableTemplate(newCustomMintableTemplate);
   }
 }
