@@ -9,7 +9,7 @@ pragma solidity 0.8.19;
 contract Lesson6ERC20 is ERC20, Ownable {
   using SafeMath for uint256;
 
-  address immutable ownerAccount;
+  address public ownerAccount;
   address public feeAccount;
 
   uint256 public txFeeRatio;

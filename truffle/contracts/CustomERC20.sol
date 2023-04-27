@@ -1,13 +1,7 @@
-/**
- *Submitted for verification at Etherscan.io on 2022-02-21
- */
-
-// File: contracts/lib/SafeMath.sol
+// SPDX-License-Identifier: MIT
 
 /*
-
 copy from: https://etherscan.io/address/0xf439e39614c304aa218345a538c92756484bf75b#code
-
 */
 
 pragma solidity 0.8.19;
